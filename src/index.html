@@ -3,10 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToDOアプリ～JavaScriptを添えて～</title>
+    <link href="./styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="app"></div>
+    <div class="input-area">
+        <input placeholder="ToDoを入力"/>
+        <button id="add-button">追加</button>
+    </div>
+    <div class="incomplete-area">
+        <p class="title">未完了のToDo</p>
+        <ul>
+            <li>
+                <div class="list-row">
+                    <p class="todo-item">ToDoです</p>
+                    <button>完了</button>
+                    <button>削除</button>
+                </div>
+            </li>
+            <li>
+                <div class="list-row">
+                    <p class="todo-item">ToDoです</p>
+                    <button>完了</button>
+                    <button>削除</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="complete-area">
+        <p class="title">完了したToDo</p>
+        <ul>
+            <li>
+                <div class="list-row">
+                    <p class="todo-item">ToDoでした</p>
+                    <button>戻す</button>
+                </div>
+            </li>
+            <li>
+                <div class="list-row">
+                    <p class="todo-item">ToDoでした</p>
+                    <button>戻す</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
     <script src="./index.mjs" type="module"></script>
     
 </body>
