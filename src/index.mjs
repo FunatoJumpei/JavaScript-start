@@ -19,9 +19,12 @@ const onClickAdd = () => {
     
     //階層構造を作成
     div.appendChild(p);//div配下にp
-    li.appendChild(div);
+    li.appendChild(div);//li配下にdiv
 
-    console.log(p);
+    //incomplete-listがIDとして指定されている要素を呼び出し、その配下にliタグを作成する
+    //未完了リストに追加
+    document.getElementById("incomplete-list").appendChild(li);
+
 }
 //getElementByIDドキュメントにもともとあるメソッド。IDによってエレメントを取得する。
 //addEventListener ボタンが押された後のイベントを検知するメソッド。一つ目の引数は検知するイベント、二つ目の引数は実行するイベントをとる
