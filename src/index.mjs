@@ -21,7 +21,16 @@ const onClickAdd = () => {
     const completeButton = document.createElement("button");
     completeButton.innerText = "完了";
     completeButton.addEventListener("click", () => {
-        alert("完了");
+        //押された完了ボタンの親にあるliタグ配下の完了ボタンと削除ボタンを削除
+        const moveTarget = completeButton.closest("li");
+        completeButton.nextElementSibling.remove();//nextElementSibling 次のタグを指定するメソッド
+        completeButton.remove(); //押されたところのタグをそのまま削除
+        //戻すボタンを生成しdivタグ配下に設定
+        const backButton = document.createElement("button");
+        backButton.innerText = "戻す";
+        moveTarget.firstElementChild.appendChild(backButton);//最初の要素を指定して、その配下にアペンドチャイルドする
+        //完了リストに移動
+        document.getElementById("complete-list").appendChild(moveTarget);
     })
 
      //button（削除）タグ生成
@@ -42,7 +51,6 @@ const onClickAdd = () => {
     //incomplete-listがIDとして指定されている要素を呼び出し、その配下にliタグを作成する
     //未完了リストに追加
     document.getElementById("incomplete-list").appendChild(li);
-
 }
 //getElementByIDドキュメントにもともとあるメソッド。IDによってエレメントを取得する。
 //addEventListener ボタンが押された後のイベントを検知するメソッド。一つ目の引数は検知するイベント、二つ目の引数は実行するイベントをとる
