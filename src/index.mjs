@@ -17,6 +17,10 @@ const onClickAdd = () => {
     p.className = "todo-item";
     p.innerText = inputText;
     
+    //階層構造を作成
+    div.appendChild(p);//div配下にp
+    li.appendChild(div);
+
     console.log(p);
 }
 //getElementByIDドキュメントにもともとあるメソッド。IDによってエレメントを取得する。
